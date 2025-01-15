@@ -1,6 +1,6 @@
 ![alt text](https://github.com/pabloswfly/DeepSCore/blob/master/logo_thin.png?raw=true)
 
-# DeepSCore
+# scOMM
 ### A multi-language multi-omics deep learning model for automatic single-cell label transfer.
 
 - **/tutorials** directory includes jupyer notebook showing how to prepare and run DeepScore in both R and Python.
