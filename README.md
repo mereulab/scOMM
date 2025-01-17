@@ -1,4 +1,4 @@
-![alt text](https://github.com/jessicaKLL/scOMM/blob/master/scOMM_logo_ver2.png?raw=true)
+![alt text](https://github.com/mereulab/scOMM/blob/master/scOMM_logo_ver2.png)
 
 # scOMM
 ### A multi-language multi-omics deep learning model for automatic single-cell label transfer.
