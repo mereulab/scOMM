@@ -1,6 +1,6 @@
-Package: deepSCore
+Package: scOMM
 Type: Package
-Title: A multi-language multi-omics deep learning model for automatic single-cell label transfer
+Title: Single-Cell Omics Multi Mapping
 Version: 0.1.0
 Authors@R: c(
     person("Elisabetta", 
@@ -16,10 +16,10 @@ Description: The functioning of this package relies on utilizing a reference dat
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Roxygen: list(markdown = TRUE)
 Depends:
-    R (>= 3.6.0)
+    R (>= 4.2.0)
 VignetteBuilder: knitr
 biocViews:
     GeneExpression, Software, Transcription, Transcriptomics, Chromatin accessibility, Annotation,

@@ -23,13 +23,15 @@ bench_calcAUC<-function(out_list,cluster,cell_types){
     AUC_i<-c()
     for (y in 1:length(cell_types)) {
       class_to_predict <- cell_types[y]
-      print(class_to_predict)
-      selected_class <- ifelse(cluster == class_to_predict, 1, 0)
-      print(length(selected_class))
-      predicted_probabilities<-out_list[[i]][,class_to_predict]
-      print(length(predicted_probabilities))
-      AUC_y<-auc(selected_class~predicted_probabilities)
-      AUC_i<-c(AUC_i,AUC_y)
+      if(class_to_predict %in% colnames(out_list[[i]])){
+        selected_class <- ifelse(cluster == class_to_predict, 1, 0)
+        predicted_probabilities<-out_list[[i]][,class_to_predict]
+        AUC_y<-auc(selected_class~predicted_probabilities)
+        AUC_i<-c(AUC_i,AUC_y)
+      }
+      else{
+        AUC_i<-c(AUC_i,NA)
+      }
     }
     AUC_list[[i]]<-AUC_i
   }

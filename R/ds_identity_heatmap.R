@@ -6,7 +6,6 @@
 #' @param cluster A cell type annotation
 #'
 #' @import ggplot2
-#' @import hrbrthemes
 #'
 #' @return A heatmap comparing out and cluster
 #' @export
@@ -63,14 +62,19 @@ ds_identity_heatmap <- function(out,cluster) {
     confusion[is.na(confusion$Proportion),]$Proportion<-0
   }
 
-  gg<- confusion %>%
-    ggplot(aes(x=Predicted,y=Cluster,fill=Proportion)) +
-    geom_tile()+
-    scale_fill_distiller(palette = "RdPu") + theme_ipsum(axis_title_size = 14,base_family = "Arial Narrow")  +
-    theme(axis.text.x = element_text(angle = 90,size = 14,hjust=0,vjust=0.2),
-          axis.text.y = element_text(size=14)) +
-    geom_text(aes(label=round(Shared,2)),size=3)+
-    labs(title = paste0(""))+scale_x_discrete(position = "top")
+  gg <- confusion %>%
+    ggplot(aes(x = Predicted, y = Cluster, fill = Proportion)) +
+    geom_tile() +
+    scale_fill_distiller(palette = "RdPu") +
+    theme_minimal() +
+    theme(
+      axis.text.x = element_text(angle = 90, size = 14, hjust = 0, vjust = 0.2),
+      axis.text.y = element_text(size = 14),
+      axis.title = element_text(size = 14, hjust = 1)
+    ) +
+    geom_text(aes(label = round(Shared, 2)), size = 3) +
+    labs(title = paste0("")) +
+    scale_x_discrete(position = "top")
   return(gg)
 }
 
