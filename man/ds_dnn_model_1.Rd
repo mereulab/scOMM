@@ -24,6 +24,7 @@ ds_dnn_model_1(
   lr_scheduler = FALSE,
   schedule = NULL,
   patience = 2,
+  add_batchnorm = FALSE,
   ...
 )
 }
@@ -67,6 +68,8 @@ running the function. Defaults to TRUE.}
 \item{schedule}{Keras parameter to modulate how the learning rate of your optimizer changes over time (Default=NULL)}
 
 \item{patience}{Keras parameter for the number of epochs with no improvement after which training will be stopped (Default=2)}
+
+\item{add_batchnorm}{Add an optional batch normalization layer (Default=FALSE)}
 
 \item{...}{Other keras parameters.}
 }
