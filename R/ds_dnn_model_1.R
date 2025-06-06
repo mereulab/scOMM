@@ -22,6 +22,7 @@
 #' @param lr_scheduler Keras parameter to modulate how the learning rate of your optimizer changes over time (Default=FALSE)
 #' @param schedule Keras parameter to modulate how the learning rate of your optimizer changes over time (Default=NULL)
 #' @param patience Keras parameter for the number of epochs with no improvement after which training will be stopped (Default=2)
+#' @param add_batchnorm Add an optional batch normalization layer (Default=FALSE)
 #' @param ... Other keras parameters.
 #' @import keras
 #' @import glue
@@ -40,7 +41,7 @@ ds_dnn_model_1 <- function(out,hnodes, epochs=10,set.seed=TRUE,seed,
                          batch_size=32, activation="relu", add_dropout=TRUE,
                          pct_dropout=0.2,name_mod="mod", lr=0.001,
                          weight_reg=TRUE, l1=0, l2=0,verbose = TRUE, earlystopping=TRUE, lr_scheduler=FALSE,
-                         schedule=NULL, patience=2, ...){
+                         schedule=NULL, patience=2,add_batchnorm = FALSE, ...){
 
   library(keras)
 
@@ -78,6 +79,10 @@ ds_dnn_model_1 <- function(out,hnodes, epochs=10,set.seed=TRUE,seed,
   model <- keras_model_sequential() %>%
     layer_dense(units = hnodes[1], activation = activation, input_shape = ncol(train_x),name = paste(name_mod,"dense_1",sep="_"))
 
+  if (add_batchnorm) {
+    model %>% layer_batch_normalization(name = paste(name_mod, "bn_1", sep = "_"))
+  }
+
   if(add_dropout==TRUE){
     model <- model %>%
       layer_dropout(rate = pct_dropout,name = paste(name_mod,"dropout_1",sep="_"))
@@ -89,6 +94,11 @@ ds_dnn_model_1 <- function(out,hnodes, epochs=10,set.seed=TRUE,seed,
       layer_dense(units=hnodes[i], activation=activation, input_shape = c(n_features),
                   kernel_constraint=ds$w_norm, name = paste(name_mod,"dense",i+1,sep="_"),
                   kernel_regularizer=regularizer_l1_l2(l1=l1, l2=l2))
+
+    if (add_batchnorm) {
+      model %>% layer_batch_normalization(name = paste(name_mod, "bn", i+1, sep = "_"))
+    }
+
     if (add_dropout==TRUE) {
       model <- layer_dropout(model, rate=pct_dropout,name = paste(name_mod,"dropout",i+1,sep="_"))
     }
