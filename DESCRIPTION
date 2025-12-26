@@ -23,7 +23,7 @@ Depends:
     R (>= 4.2.0)
 VignetteBuilder: knitr
 biocViews:
-    GeneExpression, Software, Transcription, Transcriptomics, Chromatin accessibility, Annotation,
+    GeneExpression, Software, Transcription, Transcriptomics, ChromatinAccessibility, Annotation,
     SingleCell, Classification, Clustering
 
 
