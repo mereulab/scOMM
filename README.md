@@ -14,9 +14,7 @@ To implement scOMM in your analyses, run:
 ## R
 
 ```R
-setwd("<dirpath>/deepscore/R")
-source("deepscore.R")
-source("marker_analysis.R")
+remotes::install_github("mereulab/scOMM")
 ```
 
 In R, the following dependencies are needed:
@@ -24,7 +22,7 @@ In R, the following dependencies are needed:
 - reshape2
 - dplyr
 - ggplot2
-- tensorflow / keras
+- tensorflow & keras
 
 ## Python
 
