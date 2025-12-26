@@ -19,7 +19,7 @@
 #'
 #' @export
 #' @examples
-#' ds_feature_importance(X=x_test,Y=y_test,metric="accuracy",max_n=500)
+#' ds_feature_importance(X=x_test,Y=y_test,model=scOMM_model,metric="accuracy",max_n=500)
 #'
 
 ds_feature_importance<-function(X,Y,model,metric="accuracy",features,max_n=1000){

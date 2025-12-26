@@ -5,8 +5,6 @@
 #' @param data The output of `ds_feature_importance`.
 #' @param n The number of features to be plotted (Default=30)
 #' @param Decrease If the importance are plotted decreasing or increasing.
-#' @param general_alteration If plot the absolut scores, if `TRUE`, the plot would not take into account if the
-#' alteration means an increase or decrease. (Default=TRUE)
 #' @param main The title of the plot
 #'
 #' @import ggplot2
@@ -19,12 +17,9 @@
 #' ds_plot_importance(data,n=50,Decrease=TRUE,general_alteration=FALSE,main="Feature Importance Plot")
 #'
 
-ds_plot_importance<-function(data,n=30,Decrease=TRUE,general_alteration=TRUE,main=""){
+ds_plot_importance<-function(data,n=30,Decrease=TRUE,main=""){
   rownames(data)<-NULL
   data<-data[order(data$Score, decreasing=Decrease),]
-  if(general_alteration){
-    data$Score<-abs(data$Score)
-  }
   data<-data[1:n,]
   Selected_features<-data$Feature
   plot<-ggplot(data, aes(x=reorder(Feature,Score), y=Score, fill=Score))+

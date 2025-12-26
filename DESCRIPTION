@@ -16,7 +16,7 @@ Description: The functioning of this package relies on utilizing a reference dat
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Roxygen: list(markdown = TRUE)
 Depends:
     R (>= 4.2.0)

@@ -36,9 +36,9 @@ ds_identity_heatmap <- function(out,cluster) {
     matrix[names(sort(row.max)),]
   }
 
-  m<-t(confusion)
-  m<-matrix.sort(m)
-  confusion<-t(m)
+  #m<-t(confusion)
+  #m<-matrix.sort(m)
+  #confusion<-t(m)
 
   ord_r<-rev(rownames(confusion))
   confusion<-confusion[ord_r,]

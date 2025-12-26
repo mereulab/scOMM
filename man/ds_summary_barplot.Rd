@@ -7,8 +7,7 @@
 ds_summary_barplot(class.fac, obs.fac)
 }
 \arguments{
-\item{class.fac}{A named vector of classified cells (e.g. the \code{output$ids}
-from the \code{\link[=ms_identity_map]{ms_identity_map()}} function).}
+\item{class.fac}{A named vector of classified cells.}
 
 \item{obs.fac}{A named vector of clusters.}
 }

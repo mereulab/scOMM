@@ -4,13 +4,7 @@
 \alias{ds_plot_importance}
 \title{This function plots the importance of the features}
 \usage{
-ds_plot_importance(
-  data,
-  n = 30,
-  Decrease = TRUE,
-  general_alteration = TRUE,
-  main = ""
-)
+ds_plot_importance(data, n = 30, Decrease = TRUE, main = "")
 }
 \arguments{
 \item{data}{The output of \code{ds_feature_importance}.}
@@ -18,9 +12,6 @@ ds_plot_importance(
 \item{n}{The number of features to be plotted (Default=30)}
 
 \item{Decrease}{If the importance are plotted decreasing or increasing.}
-
-\item{general_alteration}{If plot the absolut scores, if \code{TRUE}, the plot would not take into account if the
-alteration means an increase or decrease. (Default=TRUE)}
 
 \item{main}{The title of the plot}
 }
