@@ -24,6 +24,6 @@ Depends:
 VignetteBuilder: knitr
 biocViews:
     GeneExpression, Software, Transcription, Transcriptomics, Chromatin accessibility, Annotation,
-    SingleCell, Classification, GeneExpression, Clustering
+    SingleCell, Classification, Clustering
 
 
