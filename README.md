@@ -1,7 +1,7 @@
 ![alt text](https://github.com/mereulab/scOMM/blob/master/scOMM_logo.png?raw=true)
 
 # scOMM
-### A Multi-Language Multi-Omics Deep Neural Network for automatic single-cell Label Transfer and approach Benchmarking
+### A Multi-Omics Deep Neural Network for automatic single-cell Label Transfer and approach Benchmarking
 
 - **/tutorials** directory includes jupyer notebook showing how to prepare and run scOMM in both R and Python.
 - **/utils** directory includes convenient extra functions that facilitates working with different fortmats of single-cell data.
